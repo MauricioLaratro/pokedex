@@ -1,0 +1,35 @@
+.cover{
+
+}
+
+.cover-front{
+    block-size: inherit;
+    inline-size: inherit;
+    background-color: var(--primary);
+
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background-color: green;
+    transition: 1s transform;
+    transform-origin: right;
+    backface-visibility: hidden;
+}
+
+.cover-back{
+    block-size: inherit;
+    inline-size: inherit;
+    background-color: var(--primary);
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background-color: blue;
+    inset-inline-start: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    transition: 1s transform;
+    transform-origin: left;
+}

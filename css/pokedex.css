@@ -3,6 +3,20 @@
     max-inline-size: 24rem;
     inline-size: 100%;
     outline: none;
+
+    position: relative;
+
+
+    perspective: 1300px;
+}
+
+.pokedex:is(:hover, :focus, :focus-within, .is-open) .cover-front{
+    transform: rotateY(180deg);
+}
+
+
+.pokedex:is(:hover, :focus, :focus-within, .is-open) .cover-back{
+    transform: rotateY(0deg);
 }
 
 .pokedex-main{
@@ -13,7 +27,7 @@
     inline-size: inherit;
     padding: 1.5rem;
     box-sizing: border-box;
-    background-color: red;
+    background-color: var(--primary);
 
     border-radius: .5rem .5rem 0 .5rem;
     /* overflow: hidden; para que se respete los border radius de este elemento, ya que habra elementos dentro que no tendran border radius y sus esquinas pueden tapar a los border redondeados de este container padre */
