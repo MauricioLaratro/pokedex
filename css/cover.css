@@ -11,25 +11,44 @@
     inset: 0;
     z-index: 2;
 
-    background-color: green;
     transition: 1s transform;
     transform-origin: right;
     backface-visibility: hidden;
+
+    border-inline-end: .25rem solid var(--headerColor);
+    /* border-radius: 0 0 0 .5rem; */
+    border-end-start-radius: .5rem;
+    box-sizing: border-box;
+
+    /* clip-path: polygon(0 4.75rem, 70% 3rem, 100% 3rem, 100% 100%, 0 100%); */
+    clip-path: polygon(0 4.5rem, 70% 2.8rem, 100% 2.8rem, 100% 100%, 0 100%);
 }
 
 .cover-back{
+    display: flex;
+
     block-size: inherit;
     inline-size: inherit;
     background-color: var(--primary);
+
+    padding: 1.5rem;
+    padding-block-start: 5.5rem;
 
     position: absolute;
     inset: 0;
     z-index: 1;
 
-    background-color: blue;
+    /* background-color: blue; */
     inset-inline-start: 100%;
     backface-visibility: hidden;
     transform: rotateY(-180deg);
     transition: 1s transform;
     transform-origin: left;
+    border-end-end-radius: .5rem;
+    border-inline-start: .25rem solid var(--headerColor);
+
+
+    clip-path: polygon(0 2.8rem, 30% 2.8rem, 100% 4.5rem, 100% 100%, 0 100%);
+
+    box-sizing: border-box;
 }

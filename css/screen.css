@@ -1,0 +1,61 @@
+.screen{
+    box-sizing: border-box;
+}
+
+.screen-border{
+    padding: 1.5rem;
+    padding-block-end: 2.75rem;
+    border-radius: .5rem;
+    background-color: var(--white);
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%, 0% calc(100% - 2.75rem));
+
+    box-sizing: border-box;
+    
+
+    position: relative;
+
+}
+.screen-border::after{
+    content: url(../images/hamburguer.svg);
+    position: absolute;
+    top: 86%;
+    right: 7.15%;
+}
+
+
+.screen-safeArea{
+    padding: 1rem;
+    background-color: var(--blue);
+    border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 10rem;
+    box-sizing: border-box;
+    background-size: cover;
+
+    position: relative;
+}
+.screen-safeArea::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 36%;
+    margin-block-end: -1.875rem;
+    inline-size: 1rem;
+    block-size: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+.screen-safeArea::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 47%;
+    margin-block-end: -1.875rem;
+    inline-size: 1rem;
+    block-size: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+}

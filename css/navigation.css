@@ -1,0 +1,40 @@
+.navigation{
+    --buttonSize: 1.5rem;
+    grid-area: navigation;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3, var(--buttonSize));
+    grid-template-rows: repeat(3, var(--buttonSize));
+    grid-template-areas: '. up .' 'left center right' '. down .';
+    filter: drop-shadow(2px 2px 0 var(--black));
+}
+
+.navigation > *, .navigation::after{
+    inline-size: var(--buttonSize);
+    block-size: var(--buttonSize);
+    border: none;
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+.navigation::after{
+    content: '';
+    grid-area: center;
+}
+
+.navigation > *:active{
+    transform: scale(.9);
+}
+
+.navigation-left{
+    grid-area: left;
+}
+.navigation-right{
+    grid-area: right;
+}
+.navigation-up{
+    grid-area: up;
+}
+.navigation-down{
+    grid-area: down;
+}
