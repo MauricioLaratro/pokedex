@@ -1,7 +1,0 @@
-{
-    "liveServer.settings.proxy": {
-      "enable": true,
-      "baseUri": "/api",
-      "proxyUri": "https://api.football-data.org/v2"
-    }
-  }
