@@ -15,6 +15,7 @@
     border: none;
     background-color: var(--secondary);
     cursor: pointer;
+    position: relative;
 }
 
 .navigation::after{
@@ -37,4 +38,30 @@
 }
 .navigation-down{
     grid-area: down;
+}
+
+.navigation > *::after{
+    content: '';
+    border: .25rem solid transparent;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.navigation-left::after{
+    border-inline-start: none;
+    border-inline-end-color: var(--white);
+}
+.navigation-right::after{
+    border-inline-end: none;
+    border-inline-start-color: var(--white);
+}
+.navigation-up::after{
+    border-block-start: none;
+    border-block-end-color: var(--white);
+}
+.navigation-down::after{
+    border-block-end: none;
+    border-block-start-color: var(--white);
 }
