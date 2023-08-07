@@ -19,7 +19,7 @@
   <title>Pokédex</title>
 </head>
 <body>
-  <main class="pokedex is-open" tabindex="0">
+  <main class="pokedex" id="pokedex" tabindex="0">
     <section class="pokedex-main" aria-label="Información general del Pokémon">
       <div class="header-shadow">
         <div class="header">
@@ -31,7 +31,7 @@
       </div>
       <div class="screen">
         <div class="screen-border">
-          <div class="screen-safeArea">
+          <div class="screen-safeArea" id="screen">
             <img src="" alt="" id="image">
           </div>
         </div>
@@ -39,7 +39,7 @@
       <div class="actions">
         <div class="variants">variants</div>
         <form role="search" id="form" class="search">
-          <input type="text" name="id" id="" placeholder="Quién es ese Pokémon?" autocomplete="off">
+          <input type="text" name="id" id="active-id" placeholder="Quién es ese Pokémon?" autocomplete="off">
         </form>
         <div class="description">
           <p id="description">Buscar a un Pokémon para obtener todas sus características.</p>
