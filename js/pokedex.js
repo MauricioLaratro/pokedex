@@ -1,7 +1,7 @@
 import { getPokemon, getSpecies } from "./api.js"
 
 const $image = document.querySelector('#image')
-function setImage(image) {
+export function setImage(image) {
     $image.src = image
 }
 
@@ -20,8 +20,15 @@ export async function findPokemon(id) {
     const pokemon = await getPokemon(id)
     const species = await getSpecies(id)
     const description = species.flavor_text_entries.find((flavor) => flavor.language.name === 'es')
+    const sprites = [pokemon.sprites.front_defualt]
+    for (const item in pokemon.sprites) {
+        if (item !== 'front_defualt' && item !== 'other' && item !== 'versions' && pokemon.sprites[item]) {
+            sprites.push(pokemon.sprites[item])
+        }
+    }
+    console.log(sprites)
     return {
-        sprites: pokemon.sprites.front_default,
+        sprites,
         description: description.flavor_text,
         id: pokemon.id,
     }
@@ -33,7 +40,7 @@ export async function setPokemon(id) {
     const pokemon = await findPokemon(id)
     // desactivar loader
     loader(false)
-    setImage(pokemon.sprites)
+    setImage(pokemon.sprites[1])
     setDescription(pokemon.description)
     return pokemon
 }
