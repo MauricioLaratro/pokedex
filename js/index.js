@@ -1,3 +1,4 @@
+ import './charts.js'
  import { setPokemon, setImage } from "./pokedex.js"
 
  const $form = document.querySelector('#form')
@@ -34,20 +35,20 @@ async function handlePrevPokemon() {
 
 let activeSprite = 0
 function handleNextImage() {
-    if (activePokemon === null) return false
-    if (activeSprite >= activePokemon.sprites.lenght - 1) {
-        activeSprite = 0
-        setImage(activePokemon.sprites[activeSprite])
-    }
-    activeSprite = activeSprite + 1
+  if (activePokemon === null) return false
+  if (activeSprite >= activePokemon.sprites.length - 1) {
+    activeSprite = 0
     return setImage(activePokemon.sprites[activeSprite])
+  }
+  activeSprite = activeSprite + 1
+  return setImage(activePokemon.sprites[activeSprite])
 }
 function handlePrevImage() {
-    if (activePokemon === null) return false
-    if (activeSprite <= 0) {
-        activeSprite = activePokemon.sprites.lenght - 1
-        setImage(activePokemon.sprites[activeSprite])
-    }
-    activeSprite = activeSprite - 1
+  if (activePokemon === null) return false
+  if (activeSprite <= 0) {
+    activeSprite = activePokemon.sprites.length - 1
     return setImage(activePokemon.sprites[activeSprite])
+  }
+  activeSprite = activeSprite - 1
+  return setImage(activePokemon.sprites[activeSprite])
 }

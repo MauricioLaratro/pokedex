@@ -23,7 +23,7 @@
     <section class="pokedex-main" aria-label="Información general del Pokémon">
       <div class="header-shadow">
         <div class="header">
-          <span class="light is-big is-sky"></span>
+          <span class="light is-big is-sky" id="light"></span>
           <span class="light is-red"></span>
           <span class="light is-yellow"></span>
           <span class="light is-green"></span>
@@ -57,10 +57,11 @@
     </div>
     <section class="cover-back" aria-label="Estadísticas del Pokémon">
       <div class="stats">
-        stats
+        <canvas id="stats" width="200" height="200"></canvas>
       </div>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
   <script src="./js/index.js" type="module"></script>
 </body>
 </html>
